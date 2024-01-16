@@ -1,0 +1,82 @@
+.main-section{
+    height: 100vh;
+    width: 100%;
+    background-image: url('../assets/pexels-nitin-chauhan-16343598.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    @include flex(row, center, flex-start);
+
+    .main-information {
+        margin: 0 10%;
+
+        .main-title {
+            @include glassEffect($green, .5, 5px);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 400;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            padding: 0 20px 0 20px;
+            color: $white;
+        }
+    
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            padding: 0 20px 0 20px;
+            margin: 5% 0;
+            color: $white;
+
+            a {
+                padding: 3px 10px;
+                margin: 0 3px;
+                color: $white;
+                @include glassEffect($green, .5, 5px);
+                transition: color, background-color 1s;
+
+                &:hover {
+                    color: $dark-green;
+                    background-color: rgba($color: $light-green, $alpha: .7);
+                }
+
+                &:focus {
+                    color: $dark-green;
+                    background-color: rgba($color: $light-green, $alpha: .7);
+                }
+            }
+        }
+
+        button {
+            min-width: max-content;
+            height: auto;
+            font-size: 1.5rem;
+            padding: 3px 10px;
+            margin: 0 5%;
+            color: $white;
+            @include glassEffect($light-green, .3, 1px);
+            border: solid 1px $white;
+            transition: transform 1s;
+
+            &:hover {
+                color: $light-green;
+                background-color: rgba($color: $green, $alpha: .3);
+            }
+
+            &:focus {
+                color: $light-green;
+                background-color: rgba($color: $green, $alpha: .3);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .main-information {
+        @include flex(column, center, center);
+        text-align: center;
+    }
+}

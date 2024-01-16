@@ -1,0 +1,166 @@
+header {
+    height: 15vh;
+    width: 100%;
+    padding: 0 20px;
+    @include flex(row, center,  space-between);
+
+    .starbucks-logo {
+        width: 50px;
+        height: 50px;
+        margin: 0 10px;
+    }
+
+    .desktop-menu {
+        @include flex(row, center,  space-between);
+
+        .options {
+            width: 40%;
+            min-width: max-content;
+            margin: 0 50px;
+            @include flex(row, center, space-between);
+            
+        }
+    }
+
+    .menu-icon {
+        display: none;
+        img {
+            height: 40px;
+            width: 40px;
+        }
+    }
+
+    .mobile-menu {
+        min-height: 100vh;
+        width: 65%;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 2;
+        background-color: $white;
+        display: none;
+        
+        .navbar {
+            height: 60vh;
+            width: 80%;
+            @include flex(column, center, stretch);
+            border-bottom: 3px solid $light-green;
+            ul {
+                @include flex(column, center, stretch);
+                li {
+                    margin: 30px;
+                }
+            }
+        }
+
+        .options {
+            height: 20vh;
+            margin: 0;
+            @include flex(column, center, space-around);
+        }
+
+        .close-menu{
+            cursor: pointer;
+        }
+    }
+}
+
+
+
+.navbar {
+    ul {
+        @include flex(row, center, space-between);
+        list-style: none;
+        li {
+            margin: 0 10px;
+            a {
+                display: grid;
+                place-content: center;
+                font-size: .8rem;
+                font-weight: 600;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                text-decoration: none;
+                border-color: $light-green;
+                transition: border-color 1s;
+                @extend .text-hover;
+                &:hover {
+                    border-bottom: 2px solid $green;
+                }
+
+                &:focus {
+                    border-bottom: 2px solid $green;
+                }
+            }
+        }
+    }
+}
+
+        
+.btn-sign-in {
+    background-color: transparent;
+}
+
+.btn-join-now {
+    background-color: $black;
+    color: $white;
+}
+
+.find-store {
+    @include flex(row, center, stretch);
+    img {
+        width: 20px;
+    }
+
+    a {
+        margin: 0 5px;
+        font-size: .8rem;
+        text-decoration: none;
+        @extend .text-hover;
+    }
+}
+
+.title {
+    height: 9vh;
+    width: 100%;
+    background-color: $dark-green;
+    @include flex(row, center, flex-start);
+    h1 {
+        text-transform: uppercase;
+        font-size: 12px;
+        color: $white;
+        letter-spacing: 2px;
+        margin-left: 10%;  
+    }
+}
+
+@media screen and (max-width: 800px) {
+
+    header {
+        .desktop-menu{
+            display: none;
+        }
+
+        .menu-icon {
+            display: block;
+            position: absolute;
+            right: 10%;
+            img {
+                cursor: pointer;
+            }
+        }
+
+        .mobile-menu {
+            @include flex(column, center, space-evenly);
+            display: none;
+            .close-menu {
+                .icon-close-menu {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    margin: 30px;
+                }
+            }
+        }
+    }
+}   

@@ -1,0 +1,302 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #000000;
+  font-family: "Merriweather Sans", sans-serif;
+}
+*:focus {
+  outline: solid 1px #000000;
+}
+
+body {
+  min-height: 100%;
+  min-width: 100%;
+  background-color: #f1f8f6;
+}
+
+button {
+  height: 30px;
+  width: 80px;
+  margin: 0 5px;
+  border: 1px solid #000000;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background, transform 1s;
+}
+button:hover {
+  color: #008248;
+  background-color: #d3e8e1;
+  transform: scale(1.1);
+}
+button:focus {
+  color: #008248;
+  background-color: #d3e8e1;
+  transform: scale(1.1);
+}
+
+.text-hover, .find-store a, .navbar ul li a {
+  transition: color 0.3s;
+}
+.text-hover:hover, .find-store a:hover, .navbar ul li a:hover {
+  color: #008248;
+}
+
+header {
+  height: 15vh;
+  width: 100%;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+header .starbucks-logo {
+  width: 50px;
+  height: 50px;
+  margin: 0 10px;
+}
+header .desktop-menu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+header .desktop-menu .options {
+  width: 40%;
+  min-width: max-content;
+  margin: 0 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+header .menu-icon {
+  display: none;
+}
+header .menu-icon img {
+  height: 40px;
+  width: 40px;
+}
+header .mobile-menu {
+  min-height: 100vh;
+  width: 65%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  background-color: #f1f8f6;
+  display: none;
+}
+header .mobile-menu .navbar {
+  height: 60vh;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: stretch;
+  border-bottom: 3px solid #d3e8e1;
+}
+header .mobile-menu .navbar ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: stretch;
+}
+header .mobile-menu .navbar ul li {
+  margin: 30px;
+}
+header .mobile-menu .options {
+  height: 20vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+header .mobile-menu .close-menu {
+  cursor: pointer;
+}
+
+.navbar ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+}
+.navbar ul li {
+  margin: 0 10px;
+}
+.navbar ul li a {
+  display: grid;
+  place-content: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-color: #d3e8e1;
+  transition: border-color 1s;
+}
+.navbar ul li a:hover {
+  border-bottom: 2px solid #008248;
+}
+.navbar ul li a:focus {
+  border-bottom: 2px solid #008248;
+}
+
+.btn-sign-in {
+  background-color: transparent;
+}
+
+.btn-join-now {
+  background-color: #000000;
+  color: #f1f8f6;
+}
+
+.find-store {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: stretch;
+}
+.find-store img {
+  width: 20px;
+}
+.find-store a {
+  margin: 0 5px;
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+
+.title {
+  height: 9vh;
+  width: 100%;
+  background-color: #1e3932;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.title h1 {
+  text-transform: uppercase;
+  font-size: 12px;
+  color: #f1f8f6;
+  letter-spacing: 2px;
+  margin-left: 10%;
+}
+
+@media screen and (max-width: 800px) {
+  header .desktop-menu {
+    display: none;
+  }
+  header .menu-icon {
+    display: block;
+    position: absolute;
+    right: 10%;
+  }
+  header .menu-icon img {
+    cursor: pointer;
+  }
+  header .mobile-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    display: none;
+  }
+  header .mobile-menu .close-menu .icon-close-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 30px;
+  }
+}
+.main-section {
+  height: 100vh;
+  width: 100%;
+  background-image: url("../assets/pexels-nitin-chauhan-16343598.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.main-section .main-information {
+  margin: 0 10%;
+}
+.main-section .main-information .main-title {
+  background-color: rgba(0, 130, 72, 0.5);
+  backdrop-filter: blur(5px);
+  border-radius: 20px;
+}
+.main-section .main-information h1 {
+  font-size: 2.5rem;
+  font-weight: 400;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding: 0 20px 0 20px;
+  color: #f1f8f6;
+}
+.main-section .main-information h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  padding: 0 20px 0 20px;
+  margin: 5% 0;
+  color: #f1f8f6;
+}
+.main-section .main-information h2 a {
+  padding: 3px 10px;
+  margin: 0 3px;
+  color: #f1f8f6;
+  background-color: rgba(0, 130, 72, 0.5);
+  backdrop-filter: blur(5px);
+  border-radius: 20px;
+  transition: color, background-color 1s;
+}
+.main-section .main-information h2 a:hover {
+  color: #1e3932;
+  background-color: rgba(211, 232, 225, 0.7);
+}
+.main-section .main-information h2 a:focus {
+  color: #1e3932;
+  background-color: rgba(211, 232, 225, 0.7);
+}
+.main-section .main-information button {
+  min-width: max-content;
+  height: auto;
+  font-size: 1.5rem;
+  padding: 3px 10px;
+  margin: 0 5%;
+  color: #f1f8f6;
+  background-color: rgba(211, 232, 225, 0.3);
+  backdrop-filter: blur(1px);
+  border-radius: 20px;
+  border: solid 1px #f1f8f6;
+  transition: transform 1s;
+}
+.main-section .main-information button:hover {
+  color: #d3e8e1;
+  background-color: rgba(0, 130, 72, 0.3);
+}
+.main-section .main-information button:focus {
+  color: #d3e8e1;
+  background-color: rgba(0, 130, 72, 0.3);
+}
+
+@media screen and (max-width: 700px) {
+  .main-information {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

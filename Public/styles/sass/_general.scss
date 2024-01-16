@@ -1,0 +1,70 @@
+// Tipoghraphy
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@500&display=swap');
+$main-tipoghraphy:  'Merriweather Sans', sans-serif;
+
+// Colors
+$dark-green: #1e3932;
+$green: #008248;
+$light-green: #d3e8e1;
+$white: #f1f8f6;
+$marmol: #f3f1e7;
+$black: #000000;
+
+@mixin flex($direction, $align, $justify) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $justify;
+}
+
+@mixin glassEffect($bg-color, $bg-alpha, $blur) {
+    background-color: rgba($color: $bg-color, $alpha: $bg-alpha);
+    backdrop-filter: blur($blur);
+    border-radius: 20px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: $black;
+    font-family: $main-tipoghraphy;
+
+    &:focus {
+        outline:solid 1px $black;
+    }
+}
+
+body {
+    min-height: 100%;
+    min-width: 100%;
+    background-color: #f1f8f6;
+}
+
+button {
+    height: 30px;
+    width: 80px;
+    margin: 0 5px;
+    border: 1px solid $black;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background, transform 1s;
+    &:hover {
+        color: $green;
+        background-color: $light-green;
+        transform: scale(1.1);
+    }
+
+    &:focus {
+        color: $green;
+        background-color: $light-green;
+        transform: scale(1.1);
+    }
+}
+
+.text-hover{
+    transition: color .3s;
+    &:hover {
+        color: $green;
+    }
+}
