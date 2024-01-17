@@ -152,7 +152,6 @@ header {
 
         .mobile-menu {
             @include flex(column, center, space-evenly);
-            display: none;
             .close-menu {
                 .icon-close-menu {
                     position: absolute;

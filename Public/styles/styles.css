@@ -205,7 +205,6 @@ header .mobile-menu .close-menu {
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    display: none;
   }
   header .mobile-menu .close-menu .icon-close-menu {
     position: absolute;
