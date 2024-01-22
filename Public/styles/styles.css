@@ -86,13 +86,14 @@ header .menu-icon img {
 header .mobile-menu {
   min-height: 100vh;
   width: 0;
+  opacity: 0;
   overflow: hidden;
   position: fixed;
   top: 0;
   right: 0;
   z-index: 2;
   background-color: #f1f8f6;
-  transition: width 2s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: width 2s cubic-bezier(0.19, 1, 0.22, 1), opacity 1s cubic-bezier(0.19, 1, 0.22, 1);
 }
 header .mobile-menu .navbar {
   height: 60vh;
